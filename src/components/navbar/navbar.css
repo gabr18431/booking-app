@@ -1,0 +1,48 @@
+.navbar {
+  height: 50px;
+  background-color: #003580;
+  padding-top: 16px;
+}
+
+.navContainer {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.navItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navItems svg {
+  font-size: 18px;
+  display: inline-block;
+}
+
+.navItems span {
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.navButton {
+  border: none;
+  margin-left: 8px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #006ce4;
+  background-color: #ffffff;
+}
