@@ -5,13 +5,291 @@
     max-width: 1024px;
 }
 
+#root {
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #bdbdbd;
+}
+
 @media (max-width: 968px) {
     .container {
         width: 90%;
     }
+
+    .headerTitle {
+        font-size: 2rem;
+    }
 }
+
+@media (max-width: 868px) {
+    .headerList {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .headerListItem {
+        min-width: 135px;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .headerSearch {
+        flex-wrap: wrap;
+    }
+
+    .fp {
+        flex-wrap: wrap;
+    }
+
+    .fLists {
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+
+    .headerSearchItem.grow {
+        width: 100%;
+    }
+
+    .headerSearchItem.w27 {
+        flex: 1 1 auto;
+    }
+
+    .fpItem {
+        min-width: 250px;
+    }
+
+    .fList {
+        min-width: 150px;
+    }
+
+    .listWrapper {
+        flex-direction: column;
+    }
+
+    .lsOptions {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .lsOptionItem {
+        width: 48%;
+        flex: 1 1 48%;
+        align-items: center;
+    }
+
+    .lsOptionInput {
+        box-sizing: border-box;
+        height: 50px;
+    }
+
+    .hotelDetails {
+        flex-direction: column;
+    }
+
+    .sliderImg {
+        width: 95%;
+        height: 70vh;
+    }
+
+    .close {
+        top: 90px;
+    }
+}
+
+@media (max-width: 668px) {
+    .pList {
+        flex-wrap: wrap;
+    }
+
+    .pListItem {
+        min-width: 150px;
+    }
+
+    .featured {
+        flex-wrap: wrap;
+    }
+
+    .featuredItem {
+        flex: 1 1 40%;
+    }
+
+    .siImg {
+        min-height: 100%;
+        height: auto;
+    }
+
+    .siPrice {
+        font-size: 1.2rem;
+        color: #003580;
+    }
+
+    .siCheckButton {
+        font-size: 10px;
+    }
+
+    .sliderImg {
+        width: 99%;
+        height: 70vh;
+    }
+}
+
+@media (max-width: 568px) {
+    .homeContainer {
+        margin-top: 150px;
+    }
+
+    .headerSearchItem.w27,
+    .headerSearchItem.shrink {
+        flex: 1 1 100%;
+    }
+
+    .headerSearchItem.shrink .headerBtn {
+        width: 100%;
+    }
+
+    .headerSearch {
+        bottom: -23%;
+    }
+
+    .headerListItem {
+        min-width: 125px;
+    }
+
+    .siRating {
+        flex-direction: column;
+    }
+
+    .searchItem {
+        gap: 7px;
+    }
+
+    .bookNow {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .sliderImg {
+        height: 50vh;
+        max-height: 350px;
+    }
+
+    .hotelImgWrapper {
+        width: 49%;
+    }
+    .date {
+        max-width: 400px !important;
+    }
+    .rdrDays {
+        max-width: 380px !important;
+    }
+}
+
 @media (max-width: 468px) {
     .container {
         width: 95%;
+    }
+
+    .headerTitle {
+        font-size: 1.5rem;
+    }
+
+    .headerDesc {
+        font-size: 0.8rem;
+    }
+
+    .headerSearch {
+        bottom: -28%;
+    }
+
+    .listWrapper {
+        width: 100%;
+    }
+
+    .siRating {
+        flex-direction: row;
+    }
+
+    .searchItem {
+        gap: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .siDetails {
+        gap: 10px;
+    }
+
+    .navbar {
+        height: 70px;
+    }
+
+    .navItems {
+        gap: 10px;
+        justify-content: end;
+        width: 100%;
+    }
+
+    .navContainer {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .siImg {
+        flex: 1;
+    }
+    .close {
+        top: 28.6%;
+        right: 20px;
+    }
+    .arrowRight {
+        right: 20px;
+    }
+    .arrowLeft {
+        left: 20px;
+    }
+    .hotelContainer {
+        margin-top: 40px;
+    }
+    .bookNow {
+        display: none;
+    }
+    .mail {
+        padding: 50px 8px;
+    }
+    .mailInputContainer>input {
+        margin-bottom: 20px;
+    }
+    .mailDesc {
+        font-size: 0.8rem;
+    }
+    .homeContainer {
+        margin-top: 180px;
+    }
+    .listSearch {
+        min-width: 250px;
+    }
+    .date {
+        max-width: 300px !important;
+    }
+    .rdrDays {
+        max-width: 280px !important;
+    }
+    .featuredItem {
+        flex: 1 1 50%;
+    }
+    .mailInputContainer>input {
+        width: 100%;
     }
 }

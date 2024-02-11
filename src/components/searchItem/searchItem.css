@@ -6,11 +6,12 @@
   justify-content: space-between;
   gap: 20px;
   margin-bottom: 20px;
+  height: 245px;
 }
 
 .siImg {
   width: 200px;
-  height: 200px;
+  cursor: pointer;
   object-fit: cover;
 }
 
@@ -24,6 +25,13 @@
 .siTitle {
   font-size: 20px;
   color: #0071c2;
+  cursor: pointer;
+  text-transform: capitalize;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .siDistance {

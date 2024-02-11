@@ -21,10 +21,12 @@
 .fpName{
   color: #333;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .fpCity{
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 .fpPrice{

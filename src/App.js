@@ -6,6 +6,8 @@ import {
 import Home from "./pages/home/Home";
 import Hotel from "./pages/hotel/Hotel";
 import List from "./pages/list/List";
+import MailList from "./components/mailList/MailList";
+import Footer from "./components/footer/Footer";
 import "./App.css";
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Route path="/hotels" element={<List/>}/>
         <Route path="/hotel/:id" element={<Hotel/>}/>
       </Routes>
+      <MailList/>
+      <Footer/>
     </BrowserRouter>
   );
 }

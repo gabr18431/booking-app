@@ -9,17 +9,15 @@ import "./home.css";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Navbar />
       <Header/>
-      <div className="homeContainer">
+      <div className="homeContainer container">
         <Featured/>
         <h1 className="homeTitle">Browse by property type</h1>
         <PropertyList/>
         <h1 className="homeTitle">Homes guests love</h1>
         <FeaturedProperties/>
-        <MailList/>
-        <Footer/>
       </div>
     </div>
   );

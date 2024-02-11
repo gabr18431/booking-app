@@ -9,11 +9,12 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
 import { DateRange } from "react-date-range";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
+import dataBooking from "../../bookingData.json";
 
 const Header = ({type}) => {
   const [destination, setDestination] = useState("");
@@ -42,7 +43,28 @@ const Header = ({type}) => {
   const navigate = useNavigate();
   const handleSearch = ()=> {
     navigate("hotels", { state:{ destination, date, options} });
-  }
+  };
+  const handleSearchCountry = (country)=> {
+    navigate("hotels", { state:{ destination: country, date, options} });
+  };
+  const [addActive, setAddActive] = useState(false);
+  const [dataSearching, setDataSearching] = useState([])
+  const countriesHeader = ["london","paris","amsterdam","rome","cairo"];
+  useEffect(()=>{
+    const showDataSearching = dataBooking.filter((item) => item.country.includes(destination.toLowerCase()) || item.title.toLowerCase().includes(destination.toLowerCase()));
+    setDataSearching(showDataSearching);
+  },[destination]);
+  window.addEventListener("click", (e)=> {
+    if (e.target.classList.contains('headerSearchInput')) {
+      setAddActive(true);
+    } else {
+      if (e.target.classList.contains('active')) {
+        return;
+      } else {
+        setAddActive(false);
+      }
+    }
+  })
   return (
     <div className="header">
       <div className={
@@ -80,7 +102,7 @@ const Header = ({type}) => {
             Search low prices on hotels, homes and much more...
           </p>
           <button className="headerBtn">Sign in / Register</button>
-          <div className="headerSearch">
+          <div className="headerSearch container">
             <div className="headerSearchItem grow">
               <FontAwesomeIcon icon={faBed} className="headerIcon" />
               <input
@@ -88,7 +110,28 @@ const Header = ({type}) => {
                 type="text"
                 placeholder="Where are you going?"
                 className="headerSearchInput"
+                onClick={()=> setAddActive((prev) => !prev)}
               />
+              {destination === "" ? (
+                <div className={`searchHotels ${addActive && "active"}`}>
+                {countriesHeader.map((item,i)=> (
+                  <h5 className="active" onClick={()=> {
+                    handleSearchCountry(item);
+                  }} key={i}>{item}</h5>
+                ))}
+                </div>
+              ) : (
+                <div className={`searchHotels ${addActive && "active"}`}>
+                  {dataSearching.map((item,i)=> (
+                  <div key={i} className="searchHotelsItem" onClick={() => {
+                    navigate("hotel/5", { state: item });
+                  }}>
+                    <img src={item.images[0]} alt={item.title} />
+                    <span>{item.title}</span>
+                  </div>
+                  ))}
+              </div>
+              )}
             </div>
             <div className="headerSearchItem w27">
               <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
